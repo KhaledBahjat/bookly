@@ -1,24 +1,7 @@
-import 'package:bookly/Features/home/presentation/widgets/coustom_app_bar.dart';
 import 'package:bookly/core/utils/assets.dart';
-import 'package:bookly/core/utils/spacing.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-class HomeViewBody extends StatelessWidget {
-  const HomeViewBody({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        CoustomAppBar(),
-        Height(height: 30),
-        CoustomListViewItem(),
-      ],
-    );
-  }
-}
 
 class CoustomListViewItem extends StatelessWidget {
   const CoustomListViewItem({super.key});
@@ -32,7 +15,7 @@ class CoustomListViewItem extends StatelessWidget {
         child: ListView.builder(
           itemCount: 5,
           scrollDirection: Axis.horizontal,
-          itemBuilder: (context, index) {
+          itemBuilder: (context, index) { 
             return Container(
               margin: EdgeInsets.symmetric(horizontal: 10),
               width: 130.w,
