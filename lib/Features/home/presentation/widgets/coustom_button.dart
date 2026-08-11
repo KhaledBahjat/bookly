@@ -21,6 +21,9 @@ class CoustomButton extends StatelessWidget {
       height: 50,
       child: TextButton(
         style: TextButton.styleFrom(
+          enableFeedback: true,
+          overlayColor: Colors.green,
+          elevation: 1,
           backgroundColor: backgroundColor,
           shape: RoundedRectangleBorder(
             borderRadius: borderRadius ?? BorderRadius.circular(12),
