@@ -1,7 +1,8 @@
-import 'package:bookly/Features/home/presentation/views/home_view.dart';
+import 'package:bookly/core/routing/app_routs.dart';
 import 'package:bookly/core/utils/assets.dart';
 import 'package:bookly/core/utils/spacing.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -35,8 +36,6 @@ class _SplashViewBodyState extends State<SplashViewBody>
     _startAnimation();
   }
 
-  
-
   @override
   void dispose() {
     _controller.dispose();
@@ -65,21 +64,12 @@ class _SplashViewBodyState extends State<SplashViewBody>
       ),
     );
   }
+
   Future<void> _startAnimation() async {
     await _controller.forward();
 
     if (!mounted) return;
 
-    Navigator.pushReplacement(
-      context,
-      PageRouteBuilder(
-        transitionDuration: const Duration(milliseconds: 500),
-        pageBuilder: (context, animation, secondaryAnimation) =>
-            const HomeView(),
-        transitionsBuilder: (context, animation, secondaryAnimation, child) {
-          return FadeTransition(opacity: animation, child: child);
-        },
-      ),
-    );
+    GoRouter.of(context).go(AppRouts.homeView);
   }
 }
