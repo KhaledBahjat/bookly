@@ -2,7 +2,6 @@ part of 'featuerd_book_cubit.dart';
 
 sealed class FeatuerdBookState extends Equatable {
   const FeatuerdBookState();
-
   @override
   List<Object> get props => [];
 }
