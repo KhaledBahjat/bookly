@@ -24,8 +24,8 @@ class ServerFailure extends Failure {
 
       case DioExceptionType.badResponse:
         return ServerFailure.fromResponse(
-          dioError.response?.statusCode ?? 0,
-          dioError.response?.data,
+          dioError.response!.statusCode!,
+          dioError.response!.data,
         );
 
       case DioExceptionType.cancel:
